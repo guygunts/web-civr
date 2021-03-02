@@ -1,0 +1,41 @@
+/*================================================*\
+*  Author : BoyBangkhla
+*  Created Date : 24/01/2015 09:09
+*  Module : Style
+*  Description : Backoffice Style sheet
+*  Involve People : MangEak
+*  Last Updated : 24/01/2015 09:09
+\*================================================*/
+@charset "utf-8";
+
+
+table.dataTable.table-condensed > thead > tr > th {
+    padding-right: 0px !important;
+}
+
+table.dataTable.table-red > thead > tr > th {
+    background-color: red !important;
+}
+
+table.dataTable.table-yellow > thead > tr > th {
+    background-color: yellowgreen !important;
+}
+
+	 table#tbView.dataTable tbody tr:hover {
+  background-color: #7794e3;
+}
+
+table#tbView.dataTable tbody tr:hover > .sorting_1 {
+  background-color: #7794e3;
+}
+
+table#tbView.dataTable thead:hover {
+  background-color: #7794e3;
+}
+.modal:nth-of-type(even) {
+    z-index: 1052 !important;
+}
+.modal-backdrop.show:nth-of-type(even) {
+    z-index: 1051 !important;
+}
+    

@@ -1,0 +1,39 @@
+AddDefaultCharset UTF-8
+DirectoryIndex index.php
+
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+	<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^check-login$							login.inc.php [QSA]
+RewriteRule ^page-(.*)-(.*)$						app.php?mode=$1&id=$2 [QSA]
+RewriteRule ^page-(.*)$								app.php?mode=$1 [QSA]
+RewriteRule ^module/(.*)/(.*)-print$		       module/$1/$2.print.php [QSA]
+RewriteRule ^module/(.*)/(.*)-print/(.*)/(.*)$		       module/$1/$2.print.php?mod=$2&start_date=$3&end_date=$4 [QSA]
+RewriteRule ^module/(.*)/(.*)-(.*)-(.*)$		           module/$1/$2.inc.php?mode=$3&mod=$2&table=$4 [QSA]
+RewriteRule ^module/(.*)/(.*)-(.*)$		           module/$1/$2.inc.php?mode=$3&mod=$2 [QSA]
+
+</IfModule>
+php_value upload_max_filesize 2048M
+php_value post_max_size 1024M
+php_value max_file_uploads 1000
+php_value memory_limit 1024M
+php_value max_input_vars 1000000
+php_value session.use_trans_sid 0
+php_flag register_globals off

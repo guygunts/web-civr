@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+.dt-buttons {
+    float: right;
+    margin-bottom: 5px;
+}
+
+div.dt-buttons {
+    position: relative;
+    float: right;
+}
+.reqError{
+		color: #ff0000; 
+		font-weight: bold;
+	}
+/*		 table#tbView.dataTable tbody tr:hover {
+  background-color: #7794e3;
+}
+
+table#tbView.dataTable tbody tr:hover > .sorting_1 {
+  background-color: #7794e3;
+}
+
+table#tbView.dataTable thead:hover {
+  background-color: #7794e3;
+}*/
+
+#customFile .custom-file-input:lang(en)::after {
+  content: "Select file...";
+}
+
+#customFile .custom-file-input:lang(en)::before {
+  content: "Click me";
+}
+
+/*when a value is selected, this class removes the content */
+.custom-file-input.selected:lang(en)::after {
+  content: "" !important;
+}
+
+.custom-file {
+  overflow: hidden;
+}
+.custom-file-input {
+  white-space: nowrap;
+}
